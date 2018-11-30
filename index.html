@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1 id="info"></h1>
+
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var h1 = document.getElementById('info');
+                var info = xhttp.responseText;
+                h1.innerHTML = xhttp.responseText = info;
+            }
+        };
+
+        xhttp.open("GET", "api/usuarios", true);
+        xhttp.send();
+    </script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
